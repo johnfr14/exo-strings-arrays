@@ -6,3 +6,9 @@ str
   .toUpperCase()
   .split(' ')
   .forEach((elem) => console.log(`mot: ${elem}`))
+
+str2 = str
+  .trim()
+  .split(' ')
+
+str2.forEach((elem,index) => console.log(`mot ${index}: ${elem.toUpperCase()}`))
