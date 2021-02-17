@@ -1,4 +1,4 @@
-let trucChiantALire = "Je suis le ténébreux, - le veuf, - l'inconsolé,\nLe prince d'Aquitaine à la tour abolie :\n\
+let str = "Je suis le ténébreux, - le veuf, - l'inconsolé,\nLe prince d'Aquitaine à la tour abolie :\n\
 Ma seule étoile est morte, - et mon luth constellé\n\
 Porte le soleil noir de la Mélancolie.\n\n\
 Dans la nuit du tombeau, toi qui m'as consolé,\n\
@@ -11,27 +11,25 @@ J'ai rêvé dans la grotte où nage la sirène...\n\n\
 Et j'ai deux fois vainqueur traversé l'Achéron ;\n\
 Modulant tour à tour sur la lyre d'Orphée\n\
 Les soupirs de la sainte et les cris de la fée."
-let array = trucChiantALire.split(" ")
-let str = ''
 
-for(let i = 0; i < array.length;i++){
-  str += array[i]
-  str += ' '
-}
 
 //console.log(str)
 //console.log('\n\n')
 
-let indesirable = [',', '?', '...', ';', '.', '-', ':']
+let indesirable = [',', '?', '...', ';', '.', '-', ':', '\n']
 let str2 = ''
 
 for(let i = 0; i < str.length; i++) {
-  for(let j = 0; j <= indesirable.length; j++) {
+  
+  for(let j = 0; j < indesirable.length; j++) {
     if(str[i] === indesirable[j]){
-      str2 += str[i].replace(indesirable[j],' ')
-    } 
+      i++
+      j = -1
+    }
   }
-  if(str2[i] === ' '){}
+  if(str2[i] === ' '){
+    str2 += ' '
+  }
   else {
     str2 += str[i]
   }

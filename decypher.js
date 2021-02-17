@@ -10,7 +10,7 @@ for (let d = 0; d <= 26; d++) {                       // Ok nous avons un déchi
     if(code[i] !== ' '){
       ascii = code.charCodeAt(i) + d
       if(ascii > 90)                                  // Voila le premier problème notre alphabet ascii va de 65 à 90 or si on depasse 90 il faudrat recompter à partir de 65
-        decypher += String.fromCharCode(ascii - 26)   // donc on fait - 26 :)
+        decypher += String.fromCharCode(ascii - 26)   // donc on fait - 26 si cela dépasse :)
       else 
         decypher += String.fromCharCode(ascii)
     }
