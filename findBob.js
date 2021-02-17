@@ -4,8 +4,9 @@ str
   .trim()
   .toLowerCase()
   .split(' ')
-  .forEach(function (item, index, array){
+  .forEach(function (item, index, array){ //fonction qui va compter chaque "bob dans la string"
     if (item === 'bob') {
-      console.log(index, item)
+      console.log(`${index} : ${item}`)
+    }
   }
-  })
+)
