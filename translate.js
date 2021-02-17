@@ -7,6 +7,8 @@ str
   .split(' ')
   .forEach((elem) => console.log(`mot: ${elem}`))
 
+console.log('\n')
+
 str2 = str
   .trim()
   .split(' ')
