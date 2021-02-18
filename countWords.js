@@ -35,7 +35,14 @@ for(let i = 0; i < str.length; i++) {
   }
 }
 
-let arrayFinal = str2.split(' ')
+str2 = str2.split(' ')
+let count = 0
 
-console.log(str2)
+for(let i = 0; i < str2.length; i++){
+  if(str2[i] !== '')
+    count++
+  else{}
+}
+
+console.log(count)
 
