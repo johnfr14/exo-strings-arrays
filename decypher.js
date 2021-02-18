@@ -20,4 +20,3 @@ for (let d = 0; d <= 26; d++) {                       // Ok nous avons un déchi
   }
   console.log(`Décalage de ${d}\n${decypher}\n`)      
 }
-
