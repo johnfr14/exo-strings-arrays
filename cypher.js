@@ -4,13 +4,37 @@ Une interaction manuelle est possible, le but n'étant pas de déchiffrer ce cod
 On attend de vous que vous minimalisiez les interactions manuelles pour déchiffrer ce code. Vous devrez rendre les codes que vous avez utilisé dans un fichier decypher.js\
  et ecrire en commentaire vos démarches et les différentes étapes que vous avez suivi pour obtenir le message en clair. Hypothèses:"
 
-let cypher = (msg, d) => {
-  let code 
-  msg = msg.trim().toUpperCase()  
+// Function to clear all of our string from characters undesired
+let sanityze = (msg) => {
+  let indesirable = [',', '?', '...', ';', '.', '-', ':', '\n']
+  let str2 = ''
 
-  for (let i = 0; i <= msg.length; i++) {
+  for(let i = 0; i < msg.length; i++) {
+    for(let j = 0; j < indesirable.length; j++) {
+      if(msg[i] === indesirable[j]){
+       i++
+        j = -1
+      }
+    }
+    if(str2[i] === ' '){
+      str2 += ' '
+    } else {
+        str2 += msg[i]
+      }
+    }
+  return str2.trim().toUpperCase() 
+}
+
+// Function that will encrypted the messages
+let cypher = (msg) => {
+  let d = Math.floor(Math.random() * 27) + 1                      // Initialization of the secret key randomly
+  let code = ''
+  msg = sanityze(msg)                                             // We clean the message
+ // console.log(`${msg}\n`) 
+
+  for (let i = 0; i <= msg.length; i++) {                         // We go through the message to change each letters one by one with our secret key execpt the --> ' '
    let ascii                                  
-   if(msg[i] !== ' '){
+   if(msg[i] !== ' '){                                            
       ascii = msg.charCodeAt(i) + d
         if(ascii > 90)                                 
           code += String.fromCharCode(ascii - 26)   
@@ -20,8 +44,9 @@ let cypher = (msg, d) => {
             code += ' '
         }
   }
-  return code
+  return code                                                      // let's go !!!
 }
-console.log(cypher(code,1))
+
+console.log(cypher(code))
 
 

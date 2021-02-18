@@ -45,4 +45,3 @@ for(let i = 0; i < str2.length; i++){
 }
 
 console.log(count)
-
